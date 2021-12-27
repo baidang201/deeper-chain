@@ -76,4 +76,7 @@ pub enum Subcommand {
 
     /// Revert the chain to a previous state.
     Revert(sc_cli::RevertCmd),
+
+	/// Finalize the block chain in datebase after import blocks.
+	Finalize(sc_cli::FinalizeCmd),
 }

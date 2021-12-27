@@ -168,5 +168,12 @@ pub fn run() -> Result<()> {
                 Ok((cmd.run(client, backend), task_manager))
             })
         }
+        Some(Subcommand::Finalize(cmd)) => {
+			let runner = cli.create_runner(cmd)?;
+			runner.async_run(|config| {
+				let PartialComponents { client, task_manager, backend, .. } = new_partial(&config)?;
+				Ok((cmd.run(client, backend), task_manager))
+			})
+		},
     }
 }
