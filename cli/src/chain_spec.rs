@@ -599,7 +599,7 @@ pub fn chain_spec_properties() -> json::map::Map<String, json::Value> {
     );
     properties.insert(
         String::from("tokenDecimals"),
-        json::Value::Number(json::Number::from(18)),
+        json::Value::Number(json::Number::from(20)),
     );
     properties.insert(
         String::from("tokenSymbol"),
